@@ -4,14 +4,14 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import Markdown from "react-native-markdown-display";
 
 const date = new Date();
-const API_KEY = "YOUR API KEY";
+const API_KEY = "AIzaSyDT1s8aYX1lyyorvfHwsXDdCGFlbhequXw";
 const genAI = new GoogleGenerativeAI(API_KEY);
 
 export default function Response(props) {
 	const [generatedText, setGeneratedText] = useState("");
 	useEffect(() => {
 		const fetchData = async () => {
-			const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+			const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 			const prompt = props.prompt;
 			const result = await model.generateContent(prompt);
 			const response = await result.response;
@@ -26,7 +26,7 @@ export default function Response(props) {
 			<View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
 				<View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
 					<Image source={require("../assets//icons/robot.png")} style={styles.icon} />
-					<Text style={{ fontWeight: 600 }}>Gemini</Text>
+					<Text style={{ fontWeight: 600 }}>Mental Health Bot</Text>
 				</View>
 				<Text style={{ fontSize: 10, fontWeight: "600" }}>
 					{date.getHours()}:{date.getMinutes()}
