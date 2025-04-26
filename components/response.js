@@ -11,7 +11,7 @@ const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' }); // Or 'ge
 let history=[
 	{
         role: "user",
-        parts: [{ text: "You are a supportive bot. From the next prompt, Have a friendly conversation with me and answer with short mental health advices when required. Also at the end of your response rate my mood on a scale of 1 to 10, write the Mood: 'number'." }],
+        parts: [{ text: "You are a supportive bot named Ravya. From the next prompt, Have a friendly conversation with me and answer with short mental health advices when required. Also at the end of your response you must rate my mood on a scale of 1 to 10, write the Mood: 'number'." }],
       },
       {
         role: "model",
